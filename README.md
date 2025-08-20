@@ -6,3 +6,7 @@
 https://github.com/kitty92pm/CC-MP
 ```
 
+## Status
+```diff
++ Servers are up and running!
+```
