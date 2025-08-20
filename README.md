@@ -1,9 +1,8 @@
 ### CC-MP Loader
 
-## CC-MP
- **This is the official CC-MP Mod For Cookie Clicker Loader**
+ *This is the official CC-MP Mod For Cookie Clicker Loader*
 -------------------------------------------------------------
-*Mod.js post*
+**Post for mod.js/mp code**
 ```
 https://github.com/kitty92pm/CC-MP
 ```
