@@ -14,9 +14,9 @@ https://github.com/kitty92pm/CC-MP
 ------------------------------------------
 ## What does this do?
 ```
-fetch("https://raw.githubusercontent.com/wrodsarehnjj/CC-MP-Loader/refs/heads/main/Loader.js").then(r => r.text()).then(t => new Function(t)());
+fetch("https://raw.githubusercontent.com/kitty92pm/CC-MP/refs/heads/main/mp.js").then(r => r.text()).then(t => new Function(t)());
 ```
-Uses a fetch command for the mod.js to load the multiplayer script
+Uses the fetch function for the mod.js to load the multiplayer script
 
 -------------------------------------------
 
