@@ -14,7 +14,7 @@ https://github.com/kitty92pm/CC-MP
 ------------------------------------------
 ## What does this do?
 ```
-fetch("https://raw.githubusercontent.com/kitty92pm/CC-MP/refs/heads/main/mp.js").then(r => r.text()).then(t => new Function(t)());
+fetch("https://placeholder.js").then(r => r.text()).then(t => new Function(t)());
 ```
 Uses the fetch function for the mod.js to load the multiplayer script
 
