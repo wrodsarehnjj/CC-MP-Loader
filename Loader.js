@@ -284,7 +284,7 @@ checkVersion();
     window.customAlert = show;
   }
 
-  customAlert('Thanks for using CC-MP! This is beta so expect bugs! Loader Version: V1.0.0 | CC-MP Version: V4.6.1', {
+  customAlert('Thanks for using CC-MP! We are now out of beta! Enjoy! -  Loader Version: V1.0.0 | CC-MP Version: V1.0.0 Release', {
     title: 'Welcome to CC-MP | Made by list',
     okText: 'Okay!',
     copyText: 'Copy version'
