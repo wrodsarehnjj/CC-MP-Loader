@@ -7,11 +7,11 @@ async function Check() {
     const response = await fetch('https://wrodsarehnjj.github.io/status/');
     const text = await response.text();
     
-    if (text.includes('Up')) {
-      console.log('Ps');
-    } else {
+    if (text.includes('Down')) {
       alert('CC-MP Might be down | click OK for more information. Sorry!');
       window.location.href = 'https://wrodsarehnjj.github.io/status/';
+    } else {
+      console.log('Lazy');
     }
   } catch (error) {
     console.error('Error fetching webpage:', error);
