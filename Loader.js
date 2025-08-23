@@ -2,24 +2,24 @@
 // THIS IS FOR SAFETY - TRUST IT OR DONT
 // README.MD FOR INFORMATION
 
-async function checkVersion() {
+async function Check() {
   try {
-    const response = await fetch('https://greasyfork.org/en/scripts/546460-cookie-clicker-multiplayer');
+    const response = await fetch('https://wrodsarehnjj.github.io/status/');
     const text = await response.text();
     
-    if (text.includes('AutoUpdates-v1.1')) {
-      console.log('Version AutoUpdates-v1.1 found. No update needed.');
+    if (text.includes('Up')) {
+      console.log('Ps');
     } else {
-      alert('The Cookie Clicker Multiplayer mod is not running v1.1. Press "ok" to update');
-      window.location.href = 'https://greasyfork.org/en/scripts/546460-cookie-clicker-multiplayer';
+      alert('CC-MP Might be down | click OK for more information. Sorry!');
+      window.location.href = 'https://wrodsarehnjj.github.io/status/';
     }
   } catch (error) {
     console.error('Error fetching webpage:', error);
-    alert('Failed to check the version. Please try again later.');
+    alert('Failed to check');
   }
 }
 
-checkVersion();
+Check();
 
 (function () {
   if (window.__ccmpAlert && typeof window.__ccmpAlert.show === 'function') {
