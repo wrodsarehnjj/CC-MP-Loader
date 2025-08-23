@@ -3,19 +3,41 @@
 // README.MD FOR INFORMATION
 
 async function Check() {
+  const url = 'https://wrodsarehnjj.github.io/status/';
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 7000);
+
   try {
-    const response = await fetch('https://wrodsarehnjj.github.io/status/');
-    const text = await response.text();
-    
-    if (text.includes('Down')) {
-      alert('CC-MP Might be down | click OK for more information. Sorry!');
-      window.location.href = 'https://wrodsarehnjj.github.io/status/';
+    const res = await fetch(url, { cache: 'no-store', signal: controller.signal });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    const html = await res.text();
+
+    let isDown = false;
+    try {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const meta = doc.querySelector('meta[name="ccmp-status"]');
+      const val = meta?.getAttribute('content')?.trim().toLowerCase();
+      if (val === 'down') isDown = true;
+      else if (val === 'up') isDown = false;
+      else {
+        isDown = /\bDown\b/.test(html);
+      }
+    } catch {
+      isDown = /\bDown\b/.test(html);
+    }
+
+    if (isDown) {
+      alert('CC-MP might be down. Click OK for more information.');
+      window.location.href = url;
     } else {
-      console.log('Lazy');
+      console.log('CC-MP appears up');
     }
   } catch (error) {
     console.error('Error fetching webpage:', error);
     alert('Failed to check');
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
