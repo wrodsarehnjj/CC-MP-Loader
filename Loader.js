@@ -7,10 +7,10 @@ async function checkVersion() {
     const response = await fetch('https://greasyfork.org/en/scripts/546460-cookie-clicker-multiplayer');
     const text = await response.text();
     
-    if (text.includes('AutoUpdates-v1.0')) {
-      console.log('Version AutoUpdates-v1.0 found. No update needed.');
+    if (text.includes('AutoUpdates-v1.1')) {
+      console.log('Version AutoUpdates-v1.1 found. No update needed.');
     } else {
-      alert('The Cookie Clicker Multiplayer mod is not running v1.0. Press "ok" to update');
+      alert('The Cookie Clicker Multiplayer mod is not running v1.1. Press "ok" to update');
       window.location.href = 'https://greasyfork.org/en/scripts/546460-cookie-clicker-multiplayer';
     }
   } catch (error) {
