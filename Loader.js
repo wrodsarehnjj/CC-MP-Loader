@@ -5,7 +5,7 @@
 async function Check() {
   const url = 'https://wrodsarehnjj.github.io/status/';
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 7000);
+  const timeout = setTimeout(() => controller.abort(), 7000); // 7s timeout
 
   try {
     const res = await fetch(url, { cache: 'no-store', signal: controller.signal });
@@ -13,6 +13,7 @@ async function Check() {
 
     const html = await res.text();
 
+    // Prefer explicit meta tag if present: <meta name="ccmp-status" content="Up|Down">
     let isDown = false;
     try {
       const doc = new DOMParser().parseFromString(html, 'text/html');
@@ -21,6 +22,7 @@ async function Check() {
       if (val === 'down') isDown = true;
       else if (val === 'up') isDown = false;
       else {
+        // Fallback: look for the exact word "Down" in the raw HTML (capital D to avoid false positives)
         isDown = /\bDown\b/.test(html);
       }
     } catch {
