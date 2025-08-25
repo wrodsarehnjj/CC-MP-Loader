@@ -10,7 +10,7 @@ https://github.com/kitty92pm/CC-MP
 ## Status
 Download it here: [CC-MP Download](https://github.com/wrodsarehnjj/CC-MP-Loader/releases/tag/CC-MP)
 ```diff
-- Server status (Down)
++ Server status (Up)
 ```
 ------------------------------------------
 ## What does this do?
